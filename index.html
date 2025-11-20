@@ -18,9 +18,15 @@
             --radius: 14px;
             --transition: 0.25s ease;
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        /* Aplica la fuente Inter */
-        body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); } 
+
+        body { 
+            font-family: "Inter", sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+        } 
+
         header { padding: 4rem 2rem; text-align: center; }
         header h1 { font-size: 3rem; font-weight: 800; }
         header p { opacity: 0.7; margin-top: 0.5rem; }
@@ -37,6 +43,7 @@
             border-bottom: 1px solid #222; 
             z-index: 10;
         }
+
         nav a { 
             text-decoration: none; 
             color: var(--text); 
@@ -44,27 +51,26 @@
             transition: var(--transition); 
             padding: 0 0.5rem;
         }
+
         nav a:hover { 
             opacity: 1; 
             color: var(--accent); 
-            /* Efecto de línea al hacer hover */
             border-bottom: 2px solid var(--accent);
         }
 
         section { max-width: 1050px; margin: auto; padding: 4rem 2rem; }
-        h2 { font-size: 2rem; margin-bottom: 2rem; font-weight: 700; }
+
+        h2 { 
+            font-size: 2rem; 
+            margin-bottom: 2rem; 
+            font-weight: 700; 
+        }
 
         /* HERO */
         .hero { 
             height: 65vh; 
             background: center/cover no-repeat; 
             border-radius: var(--radius); 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            font-size: 2.5rem; 
-            font-weight: 700; 
-            text-shadow: 0 0 30px #000; 
             margin-bottom: 3rem; 
             max-width: 1050px; 
             margin-left: auto;
@@ -76,10 +82,13 @@
             display: grid; 
             grid-template-columns: 1fr 1fr; 
             gap: 2rem; 
-            /* Centrado vertical */
             align-items: center; 
         }
-        .about img { width: 100%; border-radius: var(--radius); }
+
+        .about img { 
+            width: 100%; 
+            border-radius: var(--radius); 
+        }
 
         /* PROJECTS */
         .grid { 
@@ -87,26 +96,36 @@
             grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); 
             gap: 2rem; 
         }
+
         .card { 
             background: var(--card); 
             padding: 1.5rem; 
             border-radius: var(--radius); 
             transition: var(--transition); 
             border: 1px solid #222; 
-            /* Sombra sutil */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
         }
+
         .card:hover { 
             transform: translateY(-5px); 
             border-color: var(--accent); 
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6); 
         }
-        .card img { width: 100%; border-radius: var(--radius); margin-bottom: 1rem; }
 
-        /* CONTACT */
-        footer { text-align: center; padding: 2rem; opacity: 0.5; margin-top: 3rem; }
+        .card img { 
+            width: 100%; 
+            border-radius: var(--radius); 
+            margin-bottom: 1rem; 
+        }
 
-        /* BOTÓN SCROLL TO TOP */
+        footer { 
+            text-align: center; 
+            padding: 2rem; 
+            opacity: 0.5; 
+            margin-top: 3rem; 
+        }
+
+        /* Scroll to top */
         #scrollToTopBtn {
             display: none; 
             position: fixed;
@@ -116,29 +135,64 @@
             background-color: var(--accent);
             color: var(--text);
             border: none;
-            outline: none;
             cursor: pointer;
             padding: 15px 20px;
             border-radius: 50%;
             font-size: 1.5rem;
             font-weight: 700;
-            transition: background-color 0.3s, opacity 0.3s;
             opacity: 0.8;
         }
+
         #scrollToTopBtn:hover {
             background-color: #3e64d7; 
             opacity: 1;
         }
+
+        /* ---------- MOBILE FIX ---------- */
+        @media (max-width: 768px) {
+
+            .hero {
+                height: 40vh;
+                border-radius: 0;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about img {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .about p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 2rem 1.2rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.9rem;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header>
         <h1>Christian Adrian Pulido Aguilar</h1>
         <p>Portfolio / Diseñador web / Desarrollador / Scrum Master</p>
     </header>
-          <section id="inicio">
-    </section>
+
+    <section id="inicio"></section>
 
     <nav>
         <a href="#inicio">Inicio</a>
@@ -148,33 +202,38 @@
     </nav>
 
     <div class="hero" style="background-image:url('perfil.jpg')"></div>
+
     <section id="about">
         <h2>Sobre mí</h2>
         <div class="about">
             <img src="foto.jpg" alt="foto.jpg" />
-           <p style="text-align: justify;">
+
+            <p style="text-align: justify;">
             Soy un profesional enfocado en la creación y mejora de soluciones web. He desarrollado páginas, landings y sistemas internos con estructuras claras, diseño funcional y enfoque en usabilidad. Me muevo bien entre la maquetación, la lógica y la integración de información, asegurando que cada entrega sea estable, entendible y fácil de mantener.
 
             También tengo experiencia trabajando con bases de datos para consultas, validaciones y soporte de procesos, lo que me permite conectar interfaces con datos reales y resolver necesidades operativas de forma directa.
 
             He participado en la implementación de un ERP, sobre todo en tareas de soporte, documentación y validación de flujos, pero mi enfoque principal siempre ha sido construir herramientas web que funcionen, se vean bien y aporten valor inmediato. Mi prioridad es estructurar soluciones prácticas, rápidas y orientadas a resultados.
-        </p>
+            </p>
         </div>
     </section>
 
     <section id="projects">
         <h2>Proyectos</h2>
+
         <div class="grid">
             <div class="card">
                 <img src="PROYECTO1.jpg" />
                 <h3>Proyecto 1</h3>
                 <p>Descripción breve del proyecto.</p>
             </div>
+
             <div class="card">
                 <img src="PROYECTO2.jpg" />
                 <h3>Proyecto 2</h3>
                 <p>Descripción breve del proyecto.</p>
             </div>
+
             <div class="card">
                 <img src="PROYECTO3.jpg" />
                 <h3>Proyecto 3</h3>
@@ -185,16 +244,17 @@
 
     <section id="contact">
         <h2>Contacto</h2>
-        <p>me30ta98@gmail.com</p>
-           <p>4435833637</p>
-          <p>
-<a href="https://www.linkedin.com/in/christian-adrian-pulido-aguilar"
-   target="_blank"
-   style="color: white; text-decoration: none;">
-   www.linkedin.com/in/christian-adrian-pulido-aguilar
-</a>
-</p>
 
+        <p>me30ta98@gmail.com</p>
+        <p>4435833637</p>
+
+        <p>
+            <a href="https://www.linkedin.com/in/christian-adrian-pulido-aguilar"
+                target="_blank"
+                style="color: white; text-decoration: none;">
+                www.linkedin.com/in/christian-adrian-pulido-aguilar
+            </a>
+        </p>
     </section>
     
     <button id="scrollToTopBtn" aria-label="Volver arriba">↑</button>
@@ -204,9 +264,7 @@
     <script>
         const scrollBtn = document.getElementById("scrollToTopBtn");
 
-        // Función para mostrar/ocultar el botón (se ejecuta con el scroll)
         window.onscroll = function() {
-            // Muestra el botón si el scroll vertical es mayor a 300px
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 scrollBtn.style.display = "block";
             } else {
@@ -214,23 +272,13 @@
             }
         };
 
-        // Función para ir a la parte superior al hacer clic
         scrollBtn.addEventListener("click", function() {
-            // Animación suave de scroll a la posición 0 (arriba)
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
         });
     </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
