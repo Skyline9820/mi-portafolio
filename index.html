@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio</title>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --card: #1a1a1a;
+      --text: #e4e4e4;
+      --accent: #4f7dff;
+      --radius: 14px;
+      --transition: 0.25s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 4rem 2rem; text-align: center; }
+    header h1 { font-size: 3rem; font-weight: 800; }
+    header p { opacity: 0.7; margin-top: 0.5rem; }
+
+    nav { display: flex; justify-content: center; gap: 2rem; padding: 1.5rem 0; position: sticky; top: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #222; }
+    nav a { text-decoration: none; color: var(--text); opacity: 0.75; transition: var(--transition); }
+    nav a:hover { opacity: 1; color: var(--accent); }
+
+    section { max-width: 1050px; margin: auto; padding: 4rem 2rem; }
+    h2 { font-size: 2rem; margin-bottom: 2rem; font-weight: 700; }
+
+    /* HERO */
+    .hero { height: 65vh; background:center/cover no-repeat; border-radius: var(--radius); display:flex; justify-content:center; align-items:center; font-size:2.5rem; font-weight:700; text-shadow:0 0 30px #000; margin-bottom:3rem; }
+
+    /* ABOUT */
+    .about { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .about img { width:100%; border-radius:var(--radius); }
+
+    /* PROJECTS */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); gap:2rem; }
+    .card { background: var(--card); padding:1.5rem; border-radius:var(--radius); transition: var(--transition); border:1px solid #222; }
+    .card:hover { transform:translateY(-5px); border-color:var(--accent); }
+    .card img { width:100%; border-radius:var(--radius); margin-bottom:1rem; }
+
+    /* CONTACT */
+    footer { text-align:center; padding:2rem; opacity:0.5; margin-top:3rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tu Nombre</h1>
+    <p>Portfolio / Diseñador / Desarrollador / Creativo</p>
+  </header>
+
+  <nav>
+    <a href="#about">Sobre mí</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+
+  <div class="hero" style="background-image:url('PORTADA.jpg')">Tu Portada Aquí</div>
+
+  <section id="about">
+    <h2>Sobre mí</h2>
+    <div class="about">
+      <img src="FOTO.jpg" alt="Foto" />
+      <p>Aquí escribes un resumen corto sobre quién eres, lo que haces y por qué eres bueno en ello.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Proyectos</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="PROYECTO1.jpg" />
+        <h3>Proyecto 1</h3>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+      <div class="card">
+        <img src="PROYECTO2.jpg" />
+        <h3>Proyecto 2</h3>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+      <div class="card">
+        <img src="PROYECTO3.jpg" />
+        <h3>Proyecto 3</h3>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <p>Correo, teléfono o redes sociales.</p>
+  </section>
+
+  <footer>© 2025 — Tu Nombre</footer>
+</body>
+</html>
