@@ -1,152 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian Adrian – Portafolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0e0e0f;
-            color: white;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio</title>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --card: #1a1a1a;
+      --text: #e4e4e4;
+      --accent: #4f7dff;
+      --radius: 14px;
+      --transition: 0.25s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 4rem 2rem; text-align: center; }
+    header h1 { font-size: 3rem; font-weight: 800; }
+    header p { opacity: 0.7; margin-top: 0.5rem; }
 
-        /* HERO */
-        .hero {
-            height: 80vh;
-            background-image: url('perfil.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            text-shadow: 0px 0px 10px black;
-        }
+    nav { display: flex; justify-content: center; gap: 2rem; padding: 1.5rem 0; position: sticky; top: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #222; }
+    nav a { text-decoration: none; color: var(--text); opacity: 0.75; transition: var(--transition); }
+    nav a:hover { opacity: 1; color: var(--accent); }
 
-        /* SOBRE MÍ */
-        .section {
-            padding: 60px 10%;
-        }
-        .about {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-        .about img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .about-text h2 {
-            margin-bottom: 10px;
-            font-size: 2.2rem;
-        }
+    section { max-width: 1050px; margin: auto; padding: 4rem 2rem; }
+    h2 { font-size: 2rem; margin-bottom: 2rem; font-weight: 700; }
 
-        /* PROYECTOS */
-        .projects h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .project {
-            background: #1a1a1d;
-            padding: 20px;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
-        .project:hover {
-            transform: translateY(-5px);
-            background: #242427;
-        }
-        .project img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
+    /* HERO */
+    .hero { height: 65vh; background:center/cover no-repeat; border-radius: var(--radius); display:flex; justify-content:center; align-items:center; font-size:2.5rem; font-weight:700; text-shadow:0 0 30px #000; margin-bottom:3rem; }
 
-        /* CONTACTO */
-        .contact {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .contact a {
-            color: #4da3ff;
-            font-size: 1.2rem;
-            text-decoration: none;
-        }
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            color: #aaa;
-        }
-    </style>
+    /* ABOUT */
+    .about { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .about img { width:100%; border-radius:var(--radius); }
+
+    /* PROJECTS */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); gap:2rem; }
+    .card { background: var(--card); padding:1.5rem; border-radius:var(--radius); transition: var(--transition); border:1px solid #222; }
+    .card:hover { transform:translateY(-5px); border-color:var(--accent); }
+    .card img { width:100%; border-radius:var(--radius); margin-bottom:1rem; }
+
+    /* CONTACT */
+    footer { text-align:center; padding:2rem; opacity:0.5; margin-top:3rem; }
+  </style>
 </head>
 <body>
 
-    <!-- HERO -->
-    <div class="hero">
-        <h1>Christian Adrian Pulido Aguilar</h1>
+  <header>
+    <h1>Tu Nombre</h1>
+    <p>Portfolio / Diseñador / Desarrollador / Creativo</p>
+  </header>
+
+  <nav>
+    <a href="#about">Sobre mí</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+
+  <div class="hero" style="background-image:url('perfil.jpg')">Tu Portada Aquí</div>
+
+  <section id="about">
+    <h2>Sobre mí</h2>
+    <div class="about">
+      <img src="FOTO.jpg" alt="Foto" />
+      <p>Aquí escribes un resumen corto sobre quién eres, lo que haces y por qué eres bueno en ello.</p>
     </div>
+  </section>
 
-    <!-- SOBRE MÍ -->
-    <section class="section about">
-        <img src="perfil.png" alt="Foto de perfil">
+  <section id="projects">
+    <h2>Proyectos</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="PROYECTO1.jpg" />
+        <h3>Proyecto 1</h3>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+      <div class="card">
+        <img src="PROYECTO2.jpg" />
+        <h3>Proyecto 2</h3>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+      <div class="card">
+        <img src="PROYECTO3.jpg" />
+        <h3>Proyecto 3</h3>
+        <p>Descripción breve del proyecto.</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="about-text">
-            <h2>Sobre mí</h2>
-            <p>Soy un Product Manager y especialista en marketing digital con experiencia liderando equipos, gestionando funnels de conversión y optimizando operaciones de servicio. Me enfoco en resolver problemas rápido y en mejorar cualquier proceso que toque. Tengo experiencia coordinando ventas, booking teams, campañas digitales y operaciones internas.</p>
-            <p>Actualmente desarrollo proyectos de producto, marketing y automatización. Me gusta trabajar con equipos remotos, optimizar flujos y construir cosas que sí funcionen en la vida real.</p>
-        </div>
-    </section>
+  <section id="contact">
+    <h2>Contacto</h2>
+    <p>Correo, teléfono o redes sociales.</p>
+  </section>
 
-    <!-- PROYECTOS -->
-    <section class="section projects">
-        <h2>Proyectos</h2>
-
-        <div class="project-grid">
-            <div class="project">
-                <img src="proyecto1.png" alt="Proyecto 1">
-                <h3>Gestión de Equipos y Booking</h3>
-                <p>Optimización de flujos de comunicación, entrenamiento, KPIs diarios y mejora operativa para equipos remotos orientados a cierre y conversión.</p>
-            </div>
-
-            <div class="project">
-                <img src="proyecto2.png" alt="Proyecto 2">
-                <h3>Embudo de Conversión + Marketing</h3>
-                <p>Desarrollo de funnels, análisis de métricas, segmentación y estrategias de adquisición para campañas digitales a gran escala.</p>
-            </div>
-
-            <div class="project">
-                <img src="proyecto3.png" alt="Proyecto 3">
-                <h3>Producto + Evaluación Técnica</h3>
-                <p>Trabajo con herramientas externas, validación de datos, evaluación de producto y diseño de soluciones enfocadas en usuarios y resultados.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="section contact">
-        <h2>Contacto</h2>
-        <p>Email: christianpulido98@gmail.com</p>
-        <a href="https://www.linkedin.com/in/christian-adrian">LinkedIn</a>
-    </section>
-
-    <footer>
-        © 2025 Christian Pulido — Portafolio
-    </footer>
-
+  <footer>© 2025 — Tu Nombre</footer>
 </body>
-
 </html>
