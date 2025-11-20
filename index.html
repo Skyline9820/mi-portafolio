@@ -1,3 +1,6 @@
+¡Claro\! Aquí tienes el código completo de tu portafolio, con todas las mejoras de estilo, la carga de la fuente Inter y el botón funcional para ir a la parte superior de la página, todo fusionado en un único archivo HTML:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,7 +22,7 @@
             --transition: 0.25s ease;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        /* AHORA USA INTER CONFIABLEMENTE */
+        /* Aplica la fuente Inter */
         body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); } 
         header { padding: 4rem 2rem; text-align: center; }
         header h1 { font-size: 3rem; font-weight: 800; }
@@ -47,7 +50,7 @@
         nav a:hover { 
             opacity: 1; 
             color: var(--accent); 
-            /* EFECTO DE LÍNEA BAJO EL ENLACE AL HACER HOVER */
+            /* Efecto de línea al hacer hover */
             border-bottom: 2px solid var(--accent);
         }
 
@@ -76,7 +79,7 @@
             display: grid; 
             grid-template-columns: 1fr 1fr; 
             gap: 2rem; 
-            /* CENTRA VERTICALMENTE EL TEXTO Y LA FOTO */
+            /* Centrado vertical */
             align-items: center; 
         }
         .about img { width: 100%; border-radius: var(--radius); }
@@ -93,13 +96,13 @@
             border-radius: var(--radius); 
             transition: var(--transition); 
             border: 1px solid #222; 
-            /* Sombra para efecto 3D sutil */
+            /* Sombra sutil */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
         }
         .card:hover { 
             transform: translateY(-5px); 
             border-color: var(--accent); 
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6); /* Sombra más fuerte al hacer hover */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6); 
         }
         .card img { width: 100%; border-radius: var(--radius); margin-bottom: 1rem; }
 
@@ -108,7 +111,7 @@
 
         /* BOTÓN SCROLL TO TOP */
         #scrollToTopBtn {
-            display: none; /* Oculto por defecto, JS lo mostrará */
+            display: none; 
             position: fixed;
             bottom: 30px;
             right: 30px;
@@ -187,7 +190,7 @@
     <script>
         const scrollBtn = document.getElementById("scrollToTopBtn");
 
-        // Función para mostrar/ocultar el botón
+        // Función para mostrar/ocultar el botón (se ejecuta con el scroll)
         window.onscroll = function() {
             // Muestra el botón si el scroll vertical es mayor a 300px
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -199,7 +202,7 @@
 
         // Función para ir a la parte superior al hacer clic
         scrollBtn.addEventListener("click", function() {
-            // Animación suave de scroll
+            // Animación suave de scroll a la posición 0 (arriba)
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
@@ -208,3 +211,4 @@
     </script>
 </body>
 </html>
+```
