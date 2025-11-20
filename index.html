@@ -118,19 +118,24 @@
             margin-bottom: 1rem; 
         }
         
-        /* ESTILOS PARA MOSTRAR EL CÓDIGO */
-        .card pre {
-            background-color: #000;
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto; /* Permite scroll horizontal si el código es muy largo */
-            font-size: 0.8rem;
-            margin-top: 1rem;
+        /* ESTILOS PARA LA CAJA DE CÓDIGO CON SCROLL */
+        .codigo-scroll {
+            max-height: 400px; /* Limita la altura de la caja de código */
+            overflow-y: auto; /* Permite el scroll vertical dentro de la caja */
+            padding: 0.5rem;
             margin-bottom: 1rem;
+            border: 1px solid #333;
+            border-radius: var(--radius);
         }
-        .card code {
+        
+        .codigo-scroll pre {
+            background-color: #000 !important;
+            padding: 0 !important;
+        }
+
+        .codigo-scroll code {
             color: #ccc;
-            white-space: pre-wrap; /* Mantiene saltos de línea y formato */
+            white-space: pre-wrap;
         }
 
 
@@ -241,9 +246,10 @@ Participé en la implementación de un ERP, principalmente brindando soporte, do
         <div class="grid">
             <div class="card">
                 <h3>Portafolio</h3>
-                <p>Código empleado para desarrollar esta página web utilizada como portafolio.</p>
+                <p>Código empleado para desarrollar esta página web utilizada como portafolio. (El scroll limita la altura para mantener el balance del diseño).</p>
                 
-                <div id="codigoPortafolio"></div>
+                <div id="codigoPortafolio" class="codigo-scroll">
+                    </div>
                 
                 <img src="11.png" alt="Captura de pantalla del código del portafolio" />
             </div>
@@ -266,6 +272,13 @@ Participé en la implementación de un ERP, principalmente brindando soporte, do
                 <img src="8.jpg" alt="MonserratBoutique" />
                 <img src="9.jpg" alt="MonserratBoutique" />
                 <img src="10.jpg" alt="MonserratBoutique" />
+            </div>
+            
+            <div class="card">
+                <h3>Reediseño y soportr Universidad de morelia</h3>
+                <p style="text-align: justify;">Esta experiencia se centra en el rediseño que se realizo en su pagina web ademas del soporte, validación y documentación del mismo.</p>
+                <img src="12.jpg" alt="12.jpg" />
+                 <img src="13.jpg" alt="13.jpg" />
             </div>
         </div>
     </section>
@@ -290,22 +303,16 @@ Participé en la implementación de un ERP, principalmente brindando soporte, do
     <footer>© 2025 — Christian Adrián Pulido Aguilar</footer>
 
     <script>
-        // --- FUNCIÓN PARA MOSTRAR EL CÓDIGO FUENTE ---
         window.onload = function() {
             // 1. Obtener todo el HTML del documento.
-            // document.documentElement.outerHTML contiene todo el código, incluyendo <html>, <head>, etc.
             const codigoFuente = document.documentElement.outerHTML;
 
-            // 2. Escapar caracteres especiales para que el navegador no los interprete como HTML
-            // Esto convierte '<' a '&lt;' y '>' a '&gt;'
             const codigoEscapado = codigoFuente
                 .replace(/</g, "&lt;")
                 .replace(/>/g, "&gt;");
 
-            // 3. Formatear la salida con <pre> y <code> para que se muestre bien
             const htmlFormateado = `<pre><code>${codigoEscapado}</code></pre>`;
 
-            // 4. Inyectar el HTML formateado en el div del proyecto "Portafolio"
             const contenedorCodigo = document.getElementById("codigoPortafolio");
             if (contenedorCodigo) {
                 contenedorCodigo.innerHTML = htmlFormateado;
